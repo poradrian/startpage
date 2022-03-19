@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>startpage</title>
+  </head>
+
+  <body>
+    <div class="crt-lines"></div>
+
+    <div class="top-level-container">
+      <main class="container">
+        <!-- weather -->
+        <div class="weather-container">
+          <!-- weather search box -->
+          <div class="search-city-box">
+            <label for="search-city-input" class="sr-only">city</label>
+            <div class="search-city">
+              <div class="search-icon-box">
+                <svg
+                  class="search-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                name="search-city-input"
+                id="search-city-input"
+                class="search-city-input"
+                placeholder="search for a city"
+              />
+            </div>
+            <button type="button" class="btn-search-city">
+              <span class="search-text">search</span>
+            </button>
+          </div>
+          <!-- weather info -->
+          <div class="weather-info">
+            <div class=""></div>
+            <h2 class="city"></h2>
+            <div class="temp-details">
+              <div class="temp"></div>
+              <div class="description"></div>
+            </div>
+            <div class="humidity"></div>
+            <div class="wind-speed"></div>
+          </div>
+        </div>
+
+        <!-- websites box -->
+        <nav>
+          <!-- search form -->
+          <div class="search-site-box">
+            <label for="search-site-input" class="sr-only">site</label>
+            <div class="search-site">
+              <label for="search-site-input" class="sr-only">search...</label>
+
+              <input
+                id="search-site-input"
+                name="search-site-input"
+                class="search-site-input"
+                placeholder="> enter website key..."
+                type="text"
+              />
+              <button type="button" class="btn-search-site">
+                <span class="search-text">go</span>
+              </button>
+            </div>
+          </div>
+          <ul class="sites-wrapper"></ul>
+        </nav>
+        <div class="wrapper-info">
+          <div class="info">
+            <p>google search: <span class="example">*query</span></p>
+            <p>DuckDuckGo search: <span class="example">-query</span></p>
+            <p>
+              site with search:
+              <span class="example">key'query</span>
+            </p>
+          </div>
+          <button type="button" class="btn-open-modal">add site</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- modal -->
+    <div class="modal" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-window">
+        <div>
+          <h2 id="modal-title">add website</h2>
+        </div>
+        <!-- modal form -->
+        <form id="addsite-form">
+          <div>
+            <div class="form-container">
+              <div class="label-container">
+                <label for="name"> name </label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    maxlength="10"
+                    autocomplete="name"
+                    placeholder="max 10 char."
+                    required
+                  />
+                </div>
+              </div>
+              <div class="label-container">
+                <label for="address"> address </label>
+                <div class="input-container">
+                  <div class="input-address">
+                    <span> https:// </span>
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      autocomplete="address"
+                      placeholder="example.com"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="label-container">
+                <label for="shortcut"> key (unassigned) </label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="shortcut"
+                    id="shortcut"
+                    maxlength="2"
+                    autocomplete="shortcut"
+                    placeholder="max 2 char."
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- buttons for the modal form -->
+          <div class="modal-btns-wrap">
+            <div class="modal-btns-container">
+              <button type="button" class="modal-btn-cancel">cancel</button>
+              <button type="submit" class="modal-btn-save">save</button>
+            </div>
+          </div>
+          <div class="alert-success">
+            <div class="alert-success-window">
+              <svg
+                class="icon-success"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+
+              <div class="alert-success-text">
+                <p>done!</p>
+              </div>
+            </div>
+          </div>
+          <div class="alert-error">
+            <div class="alert-error-window">
+              <svg
+                class="icon-error"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div class="alert-error-text">
+                <p>invalid address format</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-mask"></div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
