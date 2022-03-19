@@ -10,7 +10,7 @@ const windSpeed = document.querySelector('.wind-speed');
 
 
 function fetchWeather(city = 'bucharest') {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=a96629fccd308de02e2030e10094079b`)
     .then(res => res.json()
       .then(data => displayWeather(data))
       .catch(() => {
